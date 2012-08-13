@@ -1,0 +1,98 @@
+#!/bin/sh
+cat << DUMP
+Running main() from gtest_main.cc
+[==========] Running 44 tests from 6 test cases.
+[----------] Global test environment set-up.
+[----------] 4 tests from SurfaceTest
+[ RUN      ] SurfaceTest.QueuesToWindowComposerIsTrueWhenVisible
+[       OK ] SurfaceTest.QueuesToWindowComposerIsTrueWhenVisible
+[ RUN      ] SurfaceTest.QueuesToWindowComposerIsTrueWhenPurgatorized
+[       OK ] SurfaceTest.QueuesToWindowComposerIsTrueWhenPurgatorized
+[ RUN      ] SurfaceTest.ScreenshotsOfProtectedBuffersSucceed
+[       OK ] SurfaceTest.ScreenshotsOfProtectedBuffersSucceed
+[ RUN      ] SurfaceTest.ConcreteTypeIsSurface
+[       OK ] SurfaceTest.ConcreteTypeIsSurface
+[----------] 23 tests from SurfaceTextureClientTest
+[ RUN      ] SurfaceTextureClientTest.GetISurfaceTextureIsNotNull
+[       OK ] SurfaceTextureClientTest.GetISurfaceTextureIsNotNull
+[ RUN      ] SurfaceTextureClientTest.QueuesToWindowCompositorIsFalse
+[       OK ] SurfaceTextureClientTest.QueuesToWindowCompositorIsFalse
+[ RUN      ] SurfaceTextureClientTest.ConcreteTypeIsSurfaceTextureClient
+[       OK ] SurfaceTextureClientTest.ConcreteTypeIsSurfaceTextureClient
+[ RUN      ] SurfaceTextureClientTest.EglCreateWindowSurfaceSucceeds
+[       OK ] SurfaceTextureClientTest.EglCreateWindowSurfaceSucceeds
+[ RUN      ] SurfaceTextureClientTest.BufferGeometryInvalidSizesFail
+[       OK ] SurfaceTextureClientTest.BufferGeometryInvalidSizesFail
+[ RUN      ] SurfaceTextureClientTest.DefaultGeometryValues
+[       OK ] SurfaceTextureClientTest.DefaultGeometryValues
+[ RUN      ] SurfaceTextureClientTest.BufferGeometryCanBeSet
+[       OK ] SurfaceTextureClientTest.BufferGeometryCanBeSet
+[ RUN      ] SurfaceTextureClientTest.BufferGeometryDefaultSizeSetFormat
+[       OK ] SurfaceTextureClientTest.BufferGeometryDefaultSizeSetFormat
+[ RUN      ] SurfaceTextureClientTest.BufferGeometrySetSizeDefaultFormat
+[       OK ] SurfaceTextureClientTest.BufferGeometrySetSizeDefaultFormat
+[ RUN      ] SurfaceTextureClientTest.BufferGeometrySizeCanBeUnset
+[       OK ] SurfaceTextureClientTest.BufferGeometrySizeCanBeUnset
+[ RUN      ] SurfaceTextureClientTest.BufferGeometrySizeCanBeChangedWithoutFormat
+[       OK ] SurfaceTextureClientTest.BufferGeometrySizeCanBeChangedWithoutFormat
+[ RUN      ] SurfaceTextureClientTest.SurfaceTextureSetDefaultSize
+[       OK ] SurfaceTextureClientTest.SurfaceTextureSetDefaultSize
+[ RUN      ] SurfaceTextureClientTest.SurfaceTextureSetDefaultSizeAfterDequeue
+[       OK ] SurfaceTextureClientTest.SurfaceTextureSetDefaultSizeAfterDequeue
+[ RUN      ] SurfaceTextureClientTest.SurfaceTextureSetDefaultSizeVsGeometry
+[       OK ] SurfaceTextureClientTest.SurfaceTextureSetDefaultSizeVsGeometry
+[ RUN      ] SurfaceTextureClientTest.SurfaceTextureTooManyUpdateTexImage
+[       OK ] SurfaceTextureClientTest.SurfaceTextureTooManyUpdateTexImage
+[ RUN      ] SurfaceTextureClientTest.SurfaceTextureSyncModeSlowRetire
+[       OK ] SurfaceTextureClientTest.SurfaceTextureSyncModeSlowRetire
+[ RUN      ] SurfaceTextureClientTest.SurfaceTextureSyncModeFastRetire
+[       OK ] SurfaceTextureClientTest.SurfaceTextureSyncModeFastRetire
+[ RUN      ] SurfaceTextureClientTest.SurfaceTextureSyncModeDQQR
+[       OK ] SurfaceTextureClientTest.SurfaceTextureSyncModeDQQR
+[ RUN      ] SurfaceTextureClientTest.SurfaceTextureSyncModeMinUndequeued
+[       OK ] SurfaceTextureClientTest.SurfaceTextureSyncModeMinUndequeued
+[ RUN      ] SurfaceTextureClientTest.GetTransformMatrixReturnsVerticalFlip
+[       OK ] SurfaceTextureClientTest.GetTransformMatrixReturnsVerticalFlip
+[ RUN      ] SurfaceTextureClientTest.GetTransformMatrixSucceedsAfterFreeingBuffers
+[       OK ] SurfaceTextureClientTest.GetTransformMatrixSucceedsAfterFreeingBuffers
+[ RUN      ] SurfaceTextureClientTest.GetTransformMatrixSucceedsAfterFreeingBuffersWithCrop
+[       OK ] SurfaceTextureClientTest.GetTransformMatrixSucceedsAfterFreeingBuffersWithCrop
+[ RUN      ] SurfaceTextureClientTest.QueryFormatAfterSettingWorks
+[       OK ] SurfaceTextureClientTest.QueryFormatAfterSettingWorks
+[----------] 8 tests from SurfaceTextureGLTest
+[ RUN      ] SurfaceTextureGLTest.TexturingFromCpuFilledYV12BufferNpot
+pixel check failure: g(184 isn't 127) b(171 isn't 255)
+frameworks/base/libs/gui/tests/SurfaceTexture_test.cpp:584: Failure
+Value of: checkPixel( 0, 0, 255, 127, 255, 255)
+  Actual: false
+Expected: true
+pixel check failure: r(4 isn't 0) g(75 isn't 133) b(87 isn't 0)
+frameworks/base/libs/gui/tests/SurfaceTexture_test.cpp:585: Failure
+Value of: checkPixel(63, 0, 0, 133, 0, 255)
+  Actual: false
+Expected: true
+pixel check failure: r(3 isn't 0) g(87 isn't 133) b(22 isn't 0)
+frameworks/base/libs/gui/tests/SurfaceTexture_test.cpp:586: Failure
+Value of: checkPixel(63, 65, 0, 133, 0, 255)
+  Actual: false
+Expected: true
+pixel check failure: g(172 isn't 127) b(236 isn't 255)
+frameworks/base/libs/gui/tests/SurfaceTexture_test.cpp:587: Failure
+Value of: checkPixel( 0, 65, 255, 127, 255, 255)
+  Actual: false
+Expected: true
+pixel check failure: b(82 isn't 118)
+frameworks/base/libs/gui/tests/SurfaceTexture_test.cpp:592: Failure
+Value of: checkPixel( 7, 31, 155, 0, 118, 255)
+  Actual: false
+Expected: true
+pixel check failure: r(103 isn't 107) g(44 isn't 24) b(0 isn't 87)
+frameworks/base/libs/gui/tests/SurfaceTexture_test.cpp:593: Failure
+Value of: checkPixel(31, 9, 107, 24, 87, 255)
+  Actual: false
+Expected: true
+*********************************************************************
+ASSERT EXIT: In file: vendor/st-ericsson/multimedia/linux/mali400/driver/./src/ump/arch_hwmem/ump_frontend_hwmem.c  function: ump_mapped_pointer_release()   line: 166
+Error in mapping pointer (not mapped)
+DUMP
+exit 130

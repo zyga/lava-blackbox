@@ -1,0 +1,1036 @@
+#!/bin/sh
+cat << DUMP
+[==========] Running 13 tests from 3 test cases.
+[----------] Global test environment set-up.
+[----------] 1 test from BarDeathTest
+[ RUN      ] BarDeathTest.ThreadSafeAndFast
+
+[WARNING] external/gtest/src/../src/gtest-death-test.cc:789:: Death tests use fork(), which is unsafe particularly in a threaded context. For this test, Google Test couldn't detect the number of threads.
+[       OK ] BarDeathTest.ThreadSafeAndFast (229 ms)
+[----------] 1 test from BarDeathTest (229 ms total)
+
+[----------] 2 tests from FooTest
+[ RUN      ] FooTest.ShouldFail
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (0 ms)
+[ RUN      ] FooTest.ShouldPass
+[       OK ] FooTest.ShouldPass (0 ms)
+[----------] 2 tests from FooTest (0 ms total)
+
+[----------] 10 tests from MyParamSequence/MyParamTest
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/0
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/0 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/1
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/1 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/2
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/2 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/3
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/3 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/4
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/4 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/5
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/5 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/6
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/6 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/7
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/7 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/8
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/8 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/9
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/9 (0 ms)
+[----------] 10 tests from MyParamSequence/MyParamTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 13 tests from 3 test cases ran. (231 ms total)
+[  PASSED  ] 12 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+[==========] Running 13 tests from 3 test cases.
+[----------] Global test environment set-up.
+[----------] 1 test from BarDeathTest
+[ RUN      ] BarDeathTest.ThreadSafeAndFast
+
+[WARNING] external/gtest/src/../src/gtest-death-test.cc:789:: Death tests use fork(), which is unsafe particularly in a threaded context. For this test, Google Test couldn't detect the number of threads.
+[       OK ] BarDeathTest.ThreadSafeAndFast (215 ms)
+[----------] 1 test from BarDeathTest (215 ms total)
+
+[----------] 2 tests from FooTest
+[ RUN      ] FooTest.ShouldFail
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (0 ms)
+[ RUN      ] FooTest.ShouldPass
+[       OK ] FooTest.ShouldPass (0 ms)
+[----------] 2 tests from FooTest (0 ms total)
+
+[----------] 10 tests from MyParamSequence/MyParamTest
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/0
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/0 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/1
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/1 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/2
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/2 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/3
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/3 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/4
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/4 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/5
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/5 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/6
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/6 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/7
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/7 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/8
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/8 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/9
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/9 (0 ms)
+[----------] 10 tests from MyParamSequence/MyParamTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 13 tests from 3 test cases ran. (216 ms total)
+[  PASSED  ] 12 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+
+Repeating all tests (iteration 1) . . .
+
+[==========] Running 13 tests from 3 test cases.
+[----------] Global test environment set-up.
+[----------] 1 test from BarDeathTest
+[ RUN      ] BarDeathTest.ThreadSafeAndFast
+
+[WARNING] external/gtest/src/../src/gtest-death-test.cc:789:: Death tests use fork(), which is unsafe particularly in a threaded context. For this test, Google Test couldn't detect the number of threads.
+[       OK ] BarDeathTest.ThreadSafeAndFast (219 ms)
+[----------] 1 test from BarDeathTest (219 ms total)
+
+[----------] 2 tests from FooTest
+[ RUN      ] FooTest.ShouldFail
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (0 ms)
+[ RUN      ] FooTest.ShouldPass
+[       OK ] FooTest.ShouldPass (0 ms)
+[----------] 2 tests from FooTest (0 ms total)
+
+[----------] 10 tests from MyParamSequence/MyParamTest
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/0
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/0 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/1
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/1 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/2
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/2 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/3
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/3 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/4
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/4 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/5
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/5 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/6
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/6 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/7
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/7 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/8
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/8 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/9
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/9 (0 ms)
+[----------] 10 tests from MyParamSequence/MyParamTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 13 tests from 3 test cases ran. (220 ms total)
+[  PASSED  ] 12 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+
+Repeating all tests (iteration 2) . . .
+
+[==========] Running 13 tests from 3 test cases.
+[----------] Global test environment set-up.
+[----------] 1 test from BarDeathTest
+[ RUN      ] BarDeathTest.ThreadSafeAndFast
+
+[WARNING] external/gtest/src/../src/gtest-death-test.cc:789:: Death tests use fork(), which is unsafe particularly in a threaded context. For this test, Google Test couldn't detect the number of threads.
+[       OK ] BarDeathTest.ThreadSafeAndFast (205 ms)
+[----------] 1 test from BarDeathTest (205 ms total)
+
+[----------] 2 tests from FooTest
+[ RUN      ] FooTest.ShouldFail
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (0 ms)
+[ RUN      ] FooTest.ShouldPass
+[       OK ] FooTest.ShouldPass (0 ms)
+[----------] 2 tests from FooTest (0 ms total)
+
+[----------] 10 tests from MyParamSequence/MyParamTest
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/0
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/0 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/1
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/1 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/2
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/2 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/3
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/3 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/4
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/4 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/5
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/5 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/6
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/6 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/7
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/7 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/8
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/8 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/9
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/9 (0 ms)
+[----------] 10 tests from MyParamSequence/MyParamTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 13 tests from 3 test cases ran. (206 ms total)
+[  PASSED  ] 12 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+
+Repeating all tests (iteration 3) . . .
+
+[==========] Running 13 tests from 3 test cases.
+[----------] Global test environment set-up.
+[----------] 1 test from BarDeathTest
+[ RUN      ] BarDeathTest.ThreadSafeAndFast
+
+[WARNING] external/gtest/src/../src/gtest-death-test.cc:789:: Death tests use fork(), which is unsafe particularly in a threaded context. For this test, Google Test couldn't detect the number of threads.
+[       OK ] BarDeathTest.ThreadSafeAndFast (215 ms)
+[----------] 1 test from BarDeathTest (215 ms total)
+
+[----------] 2 tests from FooTest
+[ RUN      ] FooTest.ShouldFail
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (0 ms)
+[ RUN      ] FooTest.ShouldPass
+[       OK ] FooTest.ShouldPass (0 ms)
+[----------] 2 tests from FooTest (0 ms total)
+
+[----------] 10 tests from MyParamSequence/MyParamTest
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/0
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/0 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/1
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/1 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/2
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/2 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/3
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/3 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/4
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/4 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/5
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/5 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/6
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/6 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/7
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/7 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/8
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/8 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/9
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/9 (0 ms)
+[----------] 10 tests from MyParamSequence/MyParamTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 13 tests from 3 test cases ran. (216 ms total)
+[  PASSED  ] 12 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+
+Repeating all tests (iteration 4) . . .
+
+[==========] Running 13 tests from 3 test cases.
+[----------] Global test environment set-up.
+[----------] 1 test from BarDeathTest
+[ RUN      ] BarDeathTest.ThreadSafeAndFast
+
+[WARNING] external/gtest/src/../src/gtest-death-test.cc:789:: Death tests use fork(), which is unsafe particularly in a threaded context. For this test, Google Test couldn't detect the number of threads.
+[       OK ] BarDeathTest.ThreadSafeAndFast (227 ms)
+[----------] 1 test from BarDeathTest (227 ms total)
+
+[----------] 2 tests from FooTest
+[ RUN      ] FooTest.ShouldFail
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (0 ms)
+[ RUN      ] FooTest.ShouldPass
+[       OK ] FooTest.ShouldPass (0 ms)
+[----------] 2 tests from FooTest (0 ms total)
+
+[----------] 10 tests from MyParamSequence/MyParamTest
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/0
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/0 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/1
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/1 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/2
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/2 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/3
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/3 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/4
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/4 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/5
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/5 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/6
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/6 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/7
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/7 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/8
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/8 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/9
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/9 (0 ms)
+[----------] 10 tests from MyParamSequence/MyParamTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 13 tests from 3 test cases ran. (227 ms total)
+[  PASSED  ] 12 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+
+Repeating all tests (iteration 5) . . .
+
+[==========] Running 13 tests from 3 test cases.
+[----------] Global test environment set-up.
+[----------] 1 test from BarDeathTest
+[ RUN      ] BarDeathTest.ThreadSafeAndFast
+
+[WARNING] external/gtest/src/../src/gtest-death-test.cc:789:: Death tests use fork(), which is unsafe particularly in a threaded context. For this test, Google Test couldn't detect the number of threads.
+[       OK ] BarDeathTest.ThreadSafeAndFast (225 ms)
+[----------] 1 test from BarDeathTest (225 ms total)
+
+[----------] 2 tests from FooTest
+[ RUN      ] FooTest.ShouldFail
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (0 ms)
+[ RUN      ] FooTest.ShouldPass
+[       OK ] FooTest.ShouldPass (0 ms)
+[----------] 2 tests from FooTest (0 ms total)
+
+[----------] 10 tests from MyParamSequence/MyParamTest
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/0
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/0 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/1
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/1 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/2
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/2 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/3
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/3 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/4
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/4 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/5
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/5 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/6
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/6 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/7
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/7 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/8
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/8 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/9
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/9 (0 ms)
+[----------] 10 tests from MyParamSequence/MyParamTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 13 tests from 3 test cases ran. (225 ms total)
+[  PASSED  ] 12 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+
+Repeating all tests (iteration 1) . . .
+
+Note: Google Test filter = None
+[==========] Running 0 tests from 0 test cases.
+[==========] 0 tests from 0 test cases ran. (0 ms total)
+[  PASSED  ] 0 tests.
+
+Repeating all tests (iteration 2) . . .
+
+Note: Google Test filter = None
+[==========] Running 0 tests from 0 test cases.
+[==========] 0 tests from 0 test cases ran. (0 ms total)
+[  PASSED  ] 0 tests.
+
+Repeating all tests (iteration 1) . . .
+
+Note: Google Test filter = None
+[==========] Running 0 tests from 0 test cases.
+[==========] 0 tests from 0 test cases ran. (0 ms total)
+[  PASSED  ] 0 tests.
+
+Repeating all tests (iteration 2) . . .
+
+Note: Google Test filter = None
+[==========] Running 0 tests from 0 test cases.
+[==========] 0 tests from 0 test cases ran. (0 ms total)
+[  PASSED  ] 0 tests.
+
+Repeating all tests (iteration 3) . . .
+
+Note: Google Test filter = None
+[==========] Running 0 tests from 0 test cases.
+[==========] 0 tests from 0 test cases ran. (0 ms total)
+[  PASSED  ] 0 tests.
+
+Repeating all tests (iteration 1) . . .
+
+Note: Google Test filter = *-*ShouldFail
+[==========] Running 12 tests from 3 test cases.
+[----------] Global test environment set-up.
+[----------] 1 test from BarDeathTest
+[ RUN      ] BarDeathTest.ThreadSafeAndFast
+
+[WARNING] external/gtest/src/../src/gtest-death-test.cc:789:: Death tests use fork(), which is unsafe particularly in a threaded context. For this test, Google Test couldn't detect the number of threads.
+[       OK ] BarDeathTest.ThreadSafeAndFast (215 ms)
+[----------] 1 test from BarDeathTest (215 ms total)
+
+[----------] 1 test from FooTest
+[ RUN      ] FooTest.ShouldPass
+[       OK ] FooTest.ShouldPass (0 ms)
+[----------] 1 test from FooTest (0 ms total)
+
+[----------] 10 tests from MyParamSequence/MyParamTest
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/0
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/0 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/1
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/1 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/2
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/2 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/3
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/3 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/4
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/4 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/5
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/5 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/6
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/6 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/7
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/7 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/8
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/8 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/9
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/9 (0 ms)
+[----------] 10 tests from MyParamSequence/MyParamTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 12 tests from 3 test cases ran. (215 ms total)
+[  PASSED  ] 12 tests.
+
+Repeating all tests (iteration 2) . . .
+
+Note: Google Test filter = *-*ShouldFail
+[==========] Running 12 tests from 3 test cases.
+[----------] Global test environment set-up.
+[----------] 1 test from BarDeathTest
+[ RUN      ] BarDeathTest.ThreadSafeAndFast
+
+[WARNING] external/gtest/src/../src/gtest-death-test.cc:789:: Death tests use fork(), which is unsafe particularly in a threaded context. For this test, Google Test couldn't detect the number of threads.
+[       OK ] BarDeathTest.ThreadSafeAndFast (233 ms)
+[----------] 1 test from BarDeathTest (233 ms total)
+
+[----------] 1 test from FooTest
+[ RUN      ] FooTest.ShouldPass
+[       OK ] FooTest.ShouldPass (0 ms)
+[----------] 1 test from FooTest (0 ms total)
+
+[----------] 10 tests from MyParamSequence/MyParamTest
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/0
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/0 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/1
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/1 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/2
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/2 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/3
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/3 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/4
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/4 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/5
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/5 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/6
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/6 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/7
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/7 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/8
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/8 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/9
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/9 (0 ms)
+[----------] 10 tests from MyParamSequence/MyParamTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 12 tests from 3 test cases ran. (233 ms total)
+[  PASSED  ] 12 tests.
+
+Repeating all tests (iteration 3) . . .
+
+Note: Google Test filter = *-*ShouldFail
+[==========] Running 12 tests from 3 test cases.
+[----------] Global test environment set-up.
+[----------] 1 test from BarDeathTest
+[ RUN      ] BarDeathTest.ThreadSafeAndFast
+
+[WARNING] external/gtest/src/../src/gtest-death-test.cc:789:: Death tests use fork(), which is unsafe particularly in a threaded context. For this test, Google Test couldn't detect the number of threads.
+[       OK ] BarDeathTest.ThreadSafeAndFast (238 ms)
+[----------] 1 test from BarDeathTest (238 ms total)
+
+[----------] 1 test from FooTest
+[ RUN      ] FooTest.ShouldPass
+[       OK ] FooTest.ShouldPass (0 ms)
+[----------] 1 test from FooTest (0 ms total)
+
+[----------] 10 tests from MyParamSequence/MyParamTest
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/0
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/0 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/1
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/1 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/2
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/2 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/3
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/3 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/4
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/4 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/5
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/5 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/6
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/6 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/7
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/7 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/8
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/8 (0 ms)
+[ RUN      ] MyParamSequence/MyParamTest.ShouldPass/9
+[       OK ] MyParamSequence/MyParamTest.ShouldPass/9 (0 ms)
+[----------] 10 tests from MyParamSequence/MyParamTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 12 tests from 3 test cases ran. (239 ms total)
+[  PASSED  ] 12 tests.
+
+Repeating all tests (iteration 1) . . .
+
+Note: Google Test filter = *ShouldFail
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from FooTest
+[ RUN      ] FooTest.ShouldFail
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (1 ms)
+[----------] 1 test from FooTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (1 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+
+Repeating all tests (iteration 2) . . .
+
+Note: Google Test filter = *ShouldFail
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from FooTest
+[ RUN      ] FooTest.ShouldFail
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (0 ms)
+[----------] 1 test from FooTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+
+Repeating all tests (iteration 3) . . .
+
+Note: Google Test filter = *ShouldFail
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from FooTest
+[ RUN      ] FooTest.ShouldFail
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (0 ms)
+[----------] 1 test from FooTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (1 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+
+Repeating all tests (iteration 4) . . .
+
+Note: Google Test filter = *ShouldFail
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from FooTest
+[ RUN      ] FooTest.ShouldFail
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (0 ms)
+[----------] 1 test from FooTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+PASS
+root@android:/data/nativetest # 
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (0 ms)
+[----------] 1 test from FooTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+
+Repeating all tests (iteration 3) . . .
+
+Note: Google Test filter = *ShouldFail
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from FooTest
+[ RUN      ] FooTest.ShouldFail
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (0 ms)
+[----------] 1 test from FooTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (1 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+
+Repeating all tests (iteration 4) . . .
+
+Note: Google Test filter = *ShouldFail
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from FooTest
+[ RUN      ] FooTest.ShouldFail
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (0 ms)
+[----------] 1 test from FooTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+PASS
+root@android:/data/nativetest # 
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+
+Repeating all tests (iteration 2) . . .
+
+Note: Google Test filter = *ShouldFail
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from FooTest
+[ RUN      ] FooTest.ShouldFail
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (0 ms)
+[----------] 1 test from FooTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+
+Repeating all tests (iteration 3) . . .
+
+Note: Google Test filter = *ShouldFail
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from FooTest
+[ RUN      ] FooTest.ShouldFail
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (0 ms)
+[----------] 1 test from FooTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (1 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+
+Repeating all tests (iteration 4) . . .
+
+Note: Google Test filter = *ShouldFail
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from FooTest
+[ RUN      ] FooTest.ShouldFail
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (0 ms)
+[----------] 1 test from FooTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+PASS
+root@android:/data/nativetest # 
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (0 ms)
+[----------] 1 test from FooTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+
+Repeating all tests (iteration 3) . . .
+
+Note: Google Test filter = *ShouldFail
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from FooTest
+[ RUN      ] FooTest.ShouldFail
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (0 ms)
+[----------] 1 test from FooTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (1 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+
+Repeating all tests (iteration 4) . . .
+
+Note: Google Test filter = *ShouldFail
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from FooTest
+[ RUN      ] FooTest.ShouldFail
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (0 ms)
+[----------] 1 test from FooTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+PASS
+root@android:/data/nativetest # 
+
+
+
+
+
+
+
+
+
+
+
+
+
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+
+Repeating all tests (iteration 2) . . .
+
+Note: Google Test filter = *ShouldFail
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from FooTest
+[ RUN      ] FooTest.ShouldFail
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (0 ms)
+[----------] 1 test from FooTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+
+Repeating all tests (iteration 3) . . .
+
+Note: Google Test filter = *ShouldFail
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from FooTest
+[ RUN      ] FooTest.ShouldFail
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (0 ms)
+[----------] 1 test from FooTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (1 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+
+Repeating all tests (iteration 4) . . .
+
+Note: Google Test filter = *ShouldFail
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from FooTest
+[ RUN      ] FooTest.ShouldFail
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (0 ms)
+[----------] 1 test from FooTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+PASS
+root@android:/data/nativetest # 
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (0 ms)
+[----------] 1 test from FooTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+
+Repeating all tests (iteration 3) . . .
+
+Note: Google Test filter = *ShouldFail
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from FooTest
+[ RUN      ] FooTest.ShouldFail
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (0 ms)
+[----------] 1 test from FooTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (1 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+
+Repeating all tests (iteration 4) . . .
+
+Note: Google Test filter = *ShouldFail
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from FooTest
+[ RUN      ] FooTest.ShouldFail
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (0 ms)
+[----------] 1 test from FooTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+PASS
+root@android:/data/nativetest # 
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+
+Repeating all tests (iteration 2) . . .
+
+Note: Google Test filter = *ShouldFail
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from FooTest
+[ RUN      ] FooTest.ShouldFail
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (0 ms)
+[----------] 1 test from FooTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+
+Repeating all tests (iteration 3) . . .
+
+Note: Google Test filter = *ShouldFail
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from FooTest
+[ RUN      ] FooTest.ShouldFail
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (0 ms)
+[----------] 1 test from FooTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (1 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+
+Repeating all tests (iteration 4) . . .
+
+Note: Google Test filter = *ShouldFail
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from FooTest
+[ RUN      ] FooTest.ShouldFail
+external/gtest/test/gtest_repeat_test.cc:96: Failure
+Value of: 1
+Expected: 0
+Expected failure.
+[  FAILED  ] FooTest.ShouldFail (0 ms)
+[----------] 1 test from FooTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.ShouldFail
+
+ 1 FAILED TEST
+PASS
+DUMP

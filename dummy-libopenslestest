@@ -1,0 +1,41 @@
+#!/bin/sh
+cat << DUMP
+[==========] Running 2 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 2 tests from MimeUri
+[ RUN      ] MimeUri.testPlayAbsPath
+        PrefetchEventCallback: received event 3
+        PrefetchEventCallback: Error while prefetching data, exiting
+system/media/wilhelm/tests/mimeUri_test.cpp:84: Failure
+Value of: false
+  Actual: false
+Expected: true
+Error: Failed to prefetch data in time, exiting
+system/media/wilhelm/tests/mimeUri_test.cpp:211: Failure
+Value of: false
+  Actual: false
+Expected: true
+[  FAILED  ] MimeUri.testPlayAbsPath
+[ RUN      ] MimeUri.testPlayfilePath
+        PrefetchEventCallback: received event 3
+        PrefetchEventCallback: Error while prefetching data, exiting
+system/media/wilhelm/tests/mimeUri_test.cpp:84: Failure
+Value of: false
+  Actual: false
+Expected: true
+Error: Failed to prefetch data in time, exiting
+system/media/wilhelm/tests/mimeUri_test.cpp:211: Failure
+Value of: false
+  Actual: false
+Expected: true
+[  FAILED  ] MimeUri.testPlayfilePath
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test case ran.
+[  PASSED  ] 0 tests.
+[  FAILED  ] 2 tests, listed below:
+[  FAILED  ] MimeUri.testPlayAbsPath
+[  FAILED  ] MimeUri.testPlayfilePath
+
+ 2 FAILED TESTS
+DUMP
+exit 1

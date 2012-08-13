@@ -1,0 +1,34 @@
+#!/bin/sh
+cat << DUMP
+[==========] Running 12 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 12 tests from TestBufferQueue
+[ RUN      ] TestBufferQueue.testInvalidBuffer
+[       OK ] TestBufferQueue.testInvalidBuffer
+[ RUN      ] TestBufferQueue.testMuteSolo
+[       OK ] TestBufferQueue.testMuteSolo
+[ RUN      ] TestBufferQueue.testSeek
+[       OK ] TestBufferQueue.testSeek
+[ RUN      ] TestBufferQueue.testValidBuffer
+[       OK ] TestBufferQueue.testValidBuffer
+[ RUN      ] TestBufferQueue.testEnqueueMaxBuffer
+[       OK ] TestBufferQueue.testEnqueueMaxBuffer
+[ RUN      ] TestBufferQueue.testEnqueueExtraBuffer
+[       OK ] TestBufferQueue.testEnqueueExtraBuffer
+[ RUN      ] TestBufferQueue.testEnqueueAtStopped
+[       OK ] TestBufferQueue.testEnqueueAtStopped
+[ RUN      ] TestBufferQueue.testEnqueueAtPaused
+[       OK ] TestBufferQueue.testEnqueueAtPaused
+[ RUN      ] TestBufferQueue.testClearQueue
+[       OK ] TestBufferQueue.testClearQueue
+[ RUN      ] TestBufferQueue.testStateTransitionEmptyQueue
+[       OK ] TestBufferQueue.testStateTransitionEmptyQueue
+[ RUN      ] TestBufferQueue.testStateTransitionNonEmptyQueue
+[       OK ] TestBufferQueue.testStateTransitionNonEmptyQueue
+[ RUN      ] TestBufferQueue.testStatePlayBuffer
+[       OK ] TestBufferQueue.testStatePlayBuffer
+[----------] Global test environment tear-down
+[==========] 12 tests from 1 test case ran.
+[  PASSED  ] 12 tests.
+DUMP
+

@@ -1,0 +1,17 @@
+#!/bin/sh
+cat << DUMP
+[==========] Running 4 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 4 tests from dvmHumanReadableDescriptor
+[ RUN      ] dvmHumanReadableDescriptor.ArrayReferences
+[       OK ] dvmHumanReadableDescriptor.ArrayReferences
+[ RUN      ] dvmHumanReadableDescriptor.ScalarReferences
+[       OK ] dvmHumanReadableDescriptor.ScalarReferences
+[ RUN      ] dvmHumanReadableDescriptor.PrimitiveArrays
+[       OK ] dvmHumanReadableDescriptor.PrimitiveArrays
+[ RUN      ] dvmHumanReadableDescriptor.PrimitiveScalars
+[       OK ] dvmHumanReadableDescriptor.PrimitiveScalars
+[----------] Global test environment tear-down
+[==========] 4 tests from 1 test case ran.
+[  PASSED  ] 4 tests.
+DUMP
