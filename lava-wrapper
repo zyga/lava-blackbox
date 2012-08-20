@@ -1,0 +1,123 @@
+#!/system/bin/sh
+# Copyright (c) 2012 Zygmunt Krynicki <zygmunt.krynicki@linaro.org>
+#
+# Top-level executable for android-lava-wrapper project.
+#
+# Wrapper to run all kinds of tests included in Android image in an automated way
+# The results are normalized to LAVA interchange format, the Dashboard Bundle.
+
+# Define common functions
+# =======================
+
+# Function for failing, like in perl
+function die() {
+    echo "lava-wrapper: error: $*"
+    exit 1
+}
+
+# Logging function with common prefix
+function warn() {
+    echo "lava-wrapper: warn: $*"
+}
+
+# Logging function with common prefix
+function info() {
+    echo "lava-wrapper: info: $*"
+}
+
+# Set the defaults
+# ================
+
+# Directory where all of our results are going to be saved
+LAVA_SPOOL=/sdcard/LAVA
+# Shows a help message when nonempty
+show_help=yes
+# Runs all of the tests when nonempty
+run_tests=
+
+# Parse the arguments
+# ===================
+while test -n "$1"; do
+    case "$1" in
+        --help|-h)
+            show_help=yes
+            run_tests=
+            shift
+            ;;
+        --run-all-tests)
+            run_tests=yes
+            show_help=
+            shift
+            ;;
+        *)
+            die "Unrecognized argument $1, try --help"
+            ;;
+    esac
+done
+
+# Show help, if requested
+# =======================
+if [ "$show_help" = yes ]; then
+    echo "Usage: lava-wrapper [--run-all-tests]"
+    echo
+    echo "Run with --run-all-tests to actually start execution"
+    exit 0
+fi
+
+# Run the tests, if requested
+# ===========================
+if [ "$run_tests" = yes ]; then
+    # Ensure that the spool directory exists
+    if [ ! -d "$LAVA_SPOOL" ]; then
+        info "Creating directory $LAVA_SPOOL"
+        mkdir -p "$LAVA_SPOOL" || die "Unable to create $LAVA_SPOOL"
+    fi
+
+    # Generate a new unique directory where we will store each result
+    test_run_dir=$(mktemp -d -p $LAVA_SPOOL run.XXXXX)
+    info "Test results will be saved to $test_run_dir"
+
+    # Find all executables that look like _test and run them
+    for test_exe in $(find / -type f -name "*_test" 2>/dev/null); do
+        info "Considering test executable: $test_exe"
+        # Find a wrapper for that executable
+        wrapper=
+        # Wrappers are executables that can run a test and parse the output
+        # Each wrapper must accept, apart from the executable command, two
+        # additional arguments: -o to specify the output and -r to make the
+        # output human-readable. By default, if an executable has no wrapper it
+        # is _NOT_ executed.
+        for wrapper_finder in $(find /etc/lava/wrapper-finders/ -type f 2>/dev/null); do
+            # Skip finders that are not executable
+            test -x "$wrapper_finder" || continue
+            # Ask the wrapper if it supports the test we are currently
+            # considering. The wrapper must respond with a command to execute
+            # if it is supported or with no output otherwise.
+            wrapper=$("$wrapper_finder" "$test_exe")
+            if [ -n "$wrapper" ]; then
+                info "Accepted by: $wrapper_finder"
+                info "Analysis by: $wrapper"
+                break
+            fi
+        done
+        # If we have a wrapper then lets use it to run the test executable
+        if [ -n "$wrapper" ]; then
+            # Make the test executable if necessary
+            if [ ! -x $test_exe ]; then
+                chmod 0755 $test_exe || die "Unable to make $test_exe executable"
+            fi
+            # Find out where to write the results"
+            output_json="$test_run_dir/$(basename $test_exe).json"
+            touch $output_json || die "Unable to write to $output_json"
+            info "Bundle saved as: $output_json"
+            info "Starting test..."
+            "$wrapper" -o "$output_json" -r "$test_exe 2>&1"
+            info "Test finished!"
+        else
+            warn "Skipping! (no wrapper finder matched)"
+        fi
+    done
+
+    # Say that we are done
+    info "Done"
+fi
