@@ -306,8 +306,8 @@ run_test_prog(
 
 
 static void show_usage() {
-    printf("Usage: android-lava-wrapper [-o BUNDLE] [-r] [-d] <executable>\n"
-           "       android-lava-wrapper -t\n"
+    printf("Usage: lava-gtest-wrapper [-o BUNDLE] [-r] [-d] <executable>\n"
+           "       lava-gtest-wrapper -t\n"
            "\n"
            "The first form runs the specified executable and parses\n"
            "the output as a gtest-based test.\n"
