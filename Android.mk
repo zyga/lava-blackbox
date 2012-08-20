@@ -10,10 +10,12 @@ LOCAL_SRC_FILES:= \
 	src/text-utils.c \
 	src/uuid.c \
     src/lava-wrapper.c
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/include
 LOCAL_MODULE := lava-wrapper 
 include $(BUILD_EXECUTABLE)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE_TAGS := tests
 LOCAL_SRC_FILES:= \
 	src/bundle.c \
 	src/debug.c \
@@ -22,7 +24,7 @@ LOCAL_SRC_FILES:= \
 	src/text-utils.c \
 	src/uuid.c \
     src/lava-wrapper.c
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/include
 LOCAL_MODULE := lava-wrapper 
-LOCAL_MODULE_TAGS := tests
 LOCAL_CFLAGS += -g
 include $(BUILD_HOST_EXECUTABLE)
