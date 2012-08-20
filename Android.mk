@@ -11,7 +11,7 @@ LOCAL_SRC_FILES:= \
 	src/uuid.c \
     src/lava-wrapper.c
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/include
-LOCAL_MODULE := lava-wrapper 
+LOCAL_MODULE := lava-gtest-wrapper
 include $(BUILD_EXECUTABLE)
 
 include $(CLEAR_VARS)
@@ -25,6 +25,6 @@ LOCAL_SRC_FILES:= \
 	src/uuid.c \
     src/lava-wrapper.c
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/include
-LOCAL_MODULE := lava-wrapper 
+LOCAL_MODULE := lava-gtest-wrapper
 LOCAL_CFLAGS += -g
 include $(BUILD_HOST_EXECUTABLE)
