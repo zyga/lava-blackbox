@@ -182,10 +182,10 @@ json_format(FILE *stream, unsigned flags, ...)
                     const int SECONDS_IN_DAY = 60 * 60 * 24;
                     char buf[128];
                     value = va_arg(ap, struct timeval);
-                    snprintf(buf, sizeof buf, "%0ldd %0lds %0ldus",
-                             (long)(value.tv_sec) / SECONDS_IN_DAY,
-                             (long)(value.tv_sec) % SECONDS_IN_DAY,
-                             (long)value.tv_usec);
+                    snprintf(buf, sizeof buf, "%0lldd %0llds %0lldus",
+                             (long long)(value.tv_sec) / SECONDS_IN_DAY,
+                             (long long)(value.tv_sec) % SECONDS_IN_DAY,
+                             (long long)(value.tv_usec));
                     fputc('"', stream);
                     json_string(stream, buf);
                     fputc('"', stream);
