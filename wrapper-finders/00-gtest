@@ -1,0 +1,73 @@
+#!/system/bin/sh
+# Copyright (c) 2012 Zygmunt Krynicki <zygmunt.krynicki@linaro.org>
+#
+# A wrapper finder for lava-wrapper.
+#
+# This file should be placed in /etc/lava/wrapper-finders.d/
+#
+# If executable, it may be executed with a single argument, an absolute path to
+# a test executable. For each such execution it must either print a pathname to
+# a wrapper script on stdout or print nothing.
+#
+# This particular wrapper finder "detects" several well-known executables that
+# use the gtest framework and instructs lava-wrapper to use lava-gest-wrapper
+# to run them
+
+for supported_test in \
+     /data/nativetest/BufferQueue_test \
+     /data/nativetest/SurfaceTexture_test/SurfaceTexture_test \
+     /data/nativetest/gtest-death-test_test \
+     /data/nativetest/gtest-filepath_test \
+     /data/nativetest/gtest-linked_ptr_test \
+     /data/nativetest/gtest-message_test \
+     /data/nativetest/gtest-options_test \
+     /data/nativetest/gtest-port_test \
+     /data/nativetest/gtest-test-part_test \
+     /data/nativetest/gtest-typed-test2_test \
+     /data/nativetest/gtest-typed-test_test \
+     /data/nativetest/gtest_environment_test \
+     /data/nativetest/gtest_prod_test \
+     /data/nativetest/gtest_repeat_test \
+     /data/nativetest/gtest_stress_test \
+     /data/nativetest/webrtc_apm_unit_test/webrtc_apm_unit_test \
+     /system/bin/BasicHashtable_test \
+     /system/bin/BlobCache_test \
+     /system/bin/EGL_test \
+     /system/bin/InputChannel_test \
+     /system/bin/InputDispatcher_test \
+     /system/bin/InputEvent_test \
+     /system/bin/InputPublisherAndConsumer_test \
+     /system/bin/InputReader_test \
+     /system/bin/Looper_test \
+     /system/bin/ObbFile_test \
+     /system/bin/String8_test \
+     /system/bin/Unicode_test \
+     /system/bin/Vector_test \
+     /system/bin/ZipFileRO_test \
+     /system/bin/keymaster_test \
+     ;
+do
+    if [ "$1" = "$supported_test" ]; then
+        echo "/system/bin/lava-gtest-wrapper"
+        exit 0
+    fi
+done
+
+
+# Unsupported tests:
+# NOTE: not gtest, seems to require an argument
+#     /data/nativetest/webrtc_apm_process_test/webrtc_apm_process_test \
+# XXX: hangs without a monitor attached to output
+#     /system/bin/SurfaceMediaSource_test \
+# NOTE: not gtest
+#    /system/bin/asan/clone_test \
+# NOTE: not gtest
+#     /system/bin/asan/large_func_test \
+# NOTE: not gtest, sadly, needs investigation (no output)
+#     /system/bin/skia_test \
+# NOTE: not gtest, fails instantly
+#     /system/bin/sync_test \
+# NOTE: not gtest, requires argument 
+#     /system/bin/verifier_test \
+# NOTE: not gtest
+#     /system/bin/asan_test \
