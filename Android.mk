@@ -9,6 +9,7 @@ LOCAL_SRC_FILES:= \
 	src/json-format.c \
 	src/json-test.c \
 	src/text-utils.c \
+	src/time-utils.c \
 	src/uuid.c \
 	src/lava-gtest-wrapper.c
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/include
@@ -23,6 +24,7 @@ LOCAL_SRC_FILES:= \
 	src/json-format.c \
 	src/json-test.c \
 	src/text-utils.c \
+	src/time-utils.c \
 	src/uuid.c \
 	src/lava-gtest-wrapper.c
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/include
