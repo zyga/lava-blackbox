@@ -1,9 +1,7 @@
 LOCAL_PATH:= $(call my-dir)
 
-PRODUCT_COPY_FILES += lava-wrapper:/system/bin/lava-wrapper
-PRODUCT_COPY_FILES += 00-gtest-wrapper:/etc/lava/wrapper-finders/00-gtest
-
 include $(CLEAR_VARS)
+LOCAL_MODULE := lava-gtest-wrapper
 LOCAL_MODULE_TAGS := tests
 LOCAL_SRC_FILES:= \
 	src/bundle.c \
@@ -12,13 +10,12 @@ LOCAL_SRC_FILES:= \
 	src/json-test.c \
 	src/text-utils.c \
 	src/uuid.c \
-    src/lava-wrapper.c
+	src/lava-gtest-wrapper.c
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/include
-LOCAL_MODULE := lava-gtest-wrapper
-
 include $(BUILD_EXECUTABLE)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE := lava-gtest-wrapper
 LOCAL_MODULE_TAGS := tests
 LOCAL_SRC_FILES:= \
 	src/bundle.c \
@@ -27,8 +24,26 @@ LOCAL_SRC_FILES:= \
 	src/json-test.c \
 	src/text-utils.c \
 	src/uuid.c \
-    src/lava-wrapper.c
+	src/lava-gtest-wrapper.c
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/include
-LOCAL_MODULE := lava-gtest-wrapper
 LOCAL_CFLAGS += -g
 include $(BUILD_HOST_EXECUTABLE)
+
+# So we also need to ship a few scripts. Sadly Android makes this pretty much
+# complicated (we cannot just extend PRODUCT_COPY_FILES) so we'll cheat and use
+# BUILD_PREBUILT helper and just place them carefully where we want them.
+include $(CLEAR_VARS)
+LOCAL_MODULE = lava-wrapper
+LOCAL_MODULE_TAGS = tests
+LOCAL_MODULE_CLASS = EXECUTABLES
+LOCAL_MODULE_PATH = $(PRODUCT_OUT)/system/bin
+LOCAL_SRC_FILES = lava-wrapper
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := lava-wrapper-finders
+LOCAL_MODULE_TAGS := tests
+LOCAL_MODULE_CLASS = ETC
+LOCAL_MODULE_PATH = $(PRODUCT_OUT)/etc/lava/wrapper-finders
+LOCAL_SRC_FILES = wrapper-finders/00-gtest
+include $(BUILD_PREBUILT)
