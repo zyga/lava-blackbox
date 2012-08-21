@@ -1,9 +1,9 @@
 #!/system/bin/sh
 # Copyright (c) 2012 Zygmunt Krynicki <zygmunt.krynicki@linaro.org>
 #
-# A wrapper finder for lava-wrapper.
+# A wrapper finder for lava-wrapper that knows about google test-based tests.
 #
-# This file should be placed in /etc/lava/wrapper-finders.d/
+# This file should be placed in /system/bin as lava-wrapper-finder-gtest
 #
 # If executable, it may be executed with a single argument, an absolute path to
 # a test executable. For each such execution it must either print a pathname to

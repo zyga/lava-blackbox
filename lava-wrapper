@@ -101,7 +101,7 @@ if [ "$run_tests" = yes ]; then
         # additional arguments: -o to specify the output and -r to make the
         # output human-readable. By default, if an executable has no wrapper it
         # is _NOT_ executed.
-        for wrapper_finder in $(find /etc/lava/wrapper-finders/ -type f 2>/dev/null); do
+        for wrapper_finder in $(find /system/bin -type f -name 'lava-wrapper-finder-*' 2>/dev/null); do
             # Skip finders that are not executable
             test -x "$wrapper_finder" || continue
             # Ask the wrapper if it supports the test we are currently

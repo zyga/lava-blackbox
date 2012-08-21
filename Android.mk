@@ -33,17 +33,17 @@ include $(BUILD_HOST_EXECUTABLE)
 # complicated (we cannot just extend PRODUCT_COPY_FILES) so we'll cheat and use
 # BUILD_PREBUILT helper and just place them carefully where we want them.
 include $(CLEAR_VARS)
-LOCAL_MODULE = lava-wrapper
-LOCAL_MODULE_TAGS = tests
-LOCAL_MODULE_CLASS = EXECUTABLES
-LOCAL_MODULE_PATH = $(PRODUCT_OUT)/system/bin
-LOCAL_SRC_FILES = lava-wrapper
+LOCAL_MODULE := lava-wrapper
+LOCAL_MODULE_TAGS := tests
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/bin
+LOCAL_SRC_FILES := lava-wrapper
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := lava-wrapper-finders
+LOCAL_MODULE := lava-wrapper-finder-gtest
 LOCAL_MODULE_TAGS := tests
-LOCAL_MODULE_CLASS = ETC
-LOCAL_MODULE_PATH = $(PRODUCT_OUT)/etc/lava/wrapper-finders
-LOCAL_SRC_FILES = wrapper-finders/00-gtest
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/bin
+LOCAL_SRC_FILES := lava-wrapper-finder-gtest
 include $(BUILD_PREBUILT)
