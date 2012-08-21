@@ -29,7 +29,7 @@ function info() {
 # ================
 
 # Directory where all of our results are going to be saved
-LAVA_SPOOL=/sdcard/LAVA
+spool_dir=/sdcard/LAVA
 # Shows a help message when nonempty
 show_help=yes
 # Runs all of the tests when nonempty
@@ -39,6 +39,10 @@ run_tests=
 # ===================
 while test -n "$1"; do
     case "$1" in
+        --spool|-s)
+            spool_dir="$2"
+            shift 2
+            ;;
         --help|-h)
             show_help=yes
             run_tests=
@@ -58,9 +62,19 @@ done
 # Show help, if requested
 # =======================
 if [ "$show_help" = yes ]; then
-    echo "Usage: lava-wrapper [--run-all-tests]"
+    echo "Usage: lava-wrapper [--spool|-s DIR] [--run-all-tests]"
     echo
-    echo "Run with --run-all-tests to actually start execution"
+    echo "Available switches and options:"
+    echo
+    echo "    --run-all-tests: starts execution of tests"
+    echo " -s DIR, or"
+    echo "  --spool DIR:       selects alternate output directory"
+    echo
+    echo "Test results will be saved to the spool directory, by default"
+    echo "that is /sdcard/LAVA/. A new unique directory will be created"
+    echo "relative to the spool directory each time you run the program."
+    echo "It is advised that the spool directory is purged after collecting"
+    echo "the results to simplify correct discovery."
     exit 0
 fi
 
@@ -68,13 +82,13 @@ fi
 # ===========================
 if [ "$run_tests" = yes ]; then
     # Ensure that the spool directory exists
-    if [ ! -d "$LAVA_SPOOL" ]; then
-        info "Creating directory $LAVA_SPOOL"
-        mkdir -p "$LAVA_SPOOL" || die "Unable to create $LAVA_SPOOL"
+    if [ ! -d "$spool_dir" ]; then
+        info "Creating directory $spool_dir"
+        mkdir -p "$spool_dir" || die "Unable to create $spool_dir"
     fi
 
     # Generate a new unique directory where we will store each result
-    test_run_dir=$(mktemp -d -p $LAVA_SPOOL run.XXXXX)
+    test_run_dir=$(mktemp -d -p $spool_dir run.XXXXX)
     info "Test results will be saved to $test_run_dir"
 
     # Find all executables that look like _test and run them
