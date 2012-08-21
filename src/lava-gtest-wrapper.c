@@ -20,6 +20,7 @@
 #include "json-format.h"
 #include "json-test.h"
 #include "text-utils.h"
+#include "time-utils.h"
 #include "uuid.h"
 
 /** Patterns used to discover gtest-like output */
@@ -138,13 +139,11 @@ process_output(
                     /* We need to terminate previous test case that has probably
                      * crashed bad enough not to print the failure record */
                     if (test_result_open) {
-                        struct timeval duration;
-                        duration.tv_sec = line_timestamp.tv_sec - test_result_start.tv_sec;
-                        duration.tv_usec = line_timestamp.tv_usec - test_result_start.tv_usec;
                         debug_log("closing previous test result\n");
                         bundle_print_test_result_footer(
                             bundle_stream, flags,
-                            test_result_result, "<stdout>", lineno, duration);
+                            test_result_result, "<stdout>", lineno,
+                            timeval_delta(test_result_start, line_timestamp));
                         test_result_ready = false;
                         test_result_open = false;
                     }
@@ -237,26 +236,22 @@ process_output(
         }
         /* Write out the test result once we have everything */
         if (test_result_ready) {
-            struct timeval duration;
-            duration.tv_sec = line_timestamp.tv_sec - test_result_start.tv_sec;
-            duration.tv_usec = line_timestamp.tv_usec - test_result_start.tv_usec;
             debug_log("closing previous test result\n");
             bundle_print_test_result_footer(
                 bundle_stream, flags,
-                test_result_result, "<stdout>", lineno, duration);
+                test_result_result, "<stdout>", lineno,
+                timeval_delta(test_result_start, line_timestamp));
             test_result_ready = false;
             test_result_open = false;
         }
     } while (!feof(child_stream));
     /* We may need to terminate the final test result */
     if (test_result_open) {
-        struct timeval duration;
-        duration.tv_sec = line_timestamp.tv_sec - test_result_start.tv_sec;
-        duration.tv_usec = line_timestamp.tv_usec - test_result_start.tv_usec;
         debug_log("closing previous (final) test result\n");
         bundle_print_test_result_footer(
             bundle_stream, flags,
-            test_result_result, "<stdout>", lineno, duration);
+            test_result_result, "<stdout>", lineno,
+            timeval_delta(test_result_start, line_timestamp));
     }
     /* We may need to terminate the final test run */
     if (test_run_cnt > 0) {
