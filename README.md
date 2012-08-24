@@ -1,9 +1,9 @@
-Android LAVA Wrapper
-====================
+Black Box LAVA testing for Android
+=================================
 
 This module contains a collection of tools that run on an Android system and
-simplify the automation of tests. Android includes a lot of built-in tests
-but they differ in output formats and a way of executing them.
+simplify the automation of tests. Android includes a lot of built-in tests but
+they differ in output formats and a way of executing them.
 
 How to use
 ==========
@@ -33,7 +33,7 @@ patch the manifest with the following diff:
        <!-- External extras -->
        <project path="packages/apps/0xbench" name="platform/packages/apps/0xbench" revision="linaro-master" />
        <project path="external/android_input_bridge" name="android_input_bridge" remote="android_input_bridge" revision="master" />
-    +  <project path="external/android-lava-wrapper" name="android-lava-wrapper" remote="android-lava-wrapper" revision="master" />
+    +  <project path="external/android-lava-blackbox" name="android-lava-blackbox" remote="android-lava-blackbox" revision="master" />
      
        <!-- Linaro extras -->
        <project path="packages/apps/DisableSuspend" name="platform/packages/apps/DisableSuspend" revision="master" />
@@ -41,18 +41,19 @@ patch the manifest with the following diff:
 
 Having done that run repo sync to fetch the new repository.
 
-It is important to know that android-lava-wrapper runs _only_ in builds made
+It is important to know that android-lava-blackbox runs _only_ in builds made
 with *TARGET_BUILD_VARIANT=tests*. If in doubt have a look at my build scripts
 at http://github.com/zyga/android-build-scripts The configurations ending with
 -tests build the proper variant. 
 
 Once you have a build transfer it onto your device (*make flash* if you have
 used my build scripts) and get adb shell or direct serial shell to your device.
-You will need to run as root so you may need to use su first.
+You will need to run as root so you may need to use su first. This is also
+patched in Linaro builds.
 
 To run all of the tests at once simply run:
     
-    $ lava-wrapper --run-all-tests
+    $ lava-blackbox --run-all-tests
 
 Observe the output as tests fly by to know where each one gets saved but in
 general all results will be saved to /sdcard/LAVA.
@@ -111,17 +112,17 @@ There are a few other things to know about:
 Glossary
 ========
 
-*lava-wrapper*: This tool, the main script that should be launched (on an
-Android device) to start testing.
+*lava-blackbox*: Main executable of this projnect that should be launched (on
+an Android device) to start testing.
 
-*wrapper finders*: Small programs that helps *lava-wrapper* to recognize valid
+*wrapper finders*: Small programs that help *lava-blackbox* to recognize valid
 tests and suggests which *wrappers* should be used to process that test.
 android-lava-wrapper ships with one wrapper finder by default,
 lava-wrapper-finder-gtest that recognizes certain gtest-based tests. All
 wrapper finders must be placed in /system/bin and must follow the naming
 convention lava-wrapper-finder-\*
 
-*wrappers*: A small utility that can convert output of a certain kind of tests
+*wrappers*: Small utilities that can convert output of a certain kind of tests
 into the *Linaro Dashboard Bundle* format. Each wrapper has a standardized
 interface and must accept -o and -r options as well as a single argument that
 points to the test to execute. The wrapper must execute the test in any means

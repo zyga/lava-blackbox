@@ -1,7 +1,7 @@
 #!/system/bin/sh
 # Copyright (c) 2012 Zygmunt Krynicki <zygmunt.krynicki@linaro.org>
 #
-# Top-level executable for android-lava-wrapper project.
+# Top-level executable for android-lava-blackbox project.
 #
 # Wrapper to run all kinds of tests included in Android image in an automated way
 # The results are normalized to LAVA interchange format, the Dashboard Bundle.
@@ -11,18 +11,18 @@
 
 # Function for failing, like in perl
 function die() {
-    echo "lava-wrapper: error: $*"
+    echo "lava-blackbox: error: $*"
     exit 1
 }
 
 # Logging function with common prefix
 function warn() {
-    echo "lava-wrapper: warn: $*"
+    echo "lava-blackbox: warn: $*"
 }
 
 # Logging function with common prefix
 function info() {
-    echo "lava-wrapper: info: $*"
+    echo "lava-blackbox: info: $*"
 }
 
 # Set the defaults
@@ -62,7 +62,7 @@ done
 # Show help, if requested
 # =======================
 if [ "$show_help" = yes ]; then
-    echo "Usage: lava-wrapper [--spool|-s DIR] [--run-all-tests]"
+    echo "Usage: lava-blackbox [--spool|-s DIR] [--run-all-tests]"
     echo
     echo "Available switches and options:"
     echo

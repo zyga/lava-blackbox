@@ -35,11 +35,11 @@ include $(BUILD_HOST_EXECUTABLE)
 # complicated (we cannot just extend PRODUCT_COPY_FILES) so we'll cheat and use
 # BUILD_PREBUILT helper and just place them carefully where we want them.
 include $(CLEAR_VARS)
-LOCAL_MODULE := lava-wrapper
+LOCAL_MODULE := lava-blackbox
 LOCAL_MODULE_TAGS := tests
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/bin
-LOCAL_SRC_FILES := lava-wrapper
+LOCAL_SRC_FILES := lava-blackbox
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
