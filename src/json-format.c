@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <sys/time.h>
 #include <time.h>
 
@@ -11,7 +12,7 @@
 static
 void
 json_string(FILE *stream, const char *value) {
-    char c;
+    int c;
     /* TODO: verify the string is valid UTF-8 */
     while ((c = *value++)) {
         switch (c) {
@@ -50,7 +51,10 @@ json_string(FILE *stream, const char *value) {
                 fputc('t', stream);
                 break;
             default:
-                fputc(c, stream);
+                if (c >= 0x20 && c <= 0x7f)
+                    fputc(c, stream);
+                else
+                    fprintf(stream, "\\u%04x", (unsigned int)c);
                 break;
         }
     }
