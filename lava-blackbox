@@ -88,7 +88,7 @@ if [ "$run_tests" = yes ]; then
     fi
 
     # Generate a new unique directory where we will store each result
-    test_run_dir=$(mktemp -d -p $spool_dir run.XXXXX)
+    test_run_dir=$(mktemp -d -p $spool_dir blackbox.XXXXX)
     info "Test results will be saved to $test_run_dir"
 
     # Find all executables that look like _test and run them
