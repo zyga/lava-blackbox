@@ -10,7 +10,7 @@ How to use
 
 To use this software you need to incorporate it in your build. The best way to
 do that is to augment the manifest to pull code from the official github
-repository: git://github.com/zyga/android-lava-wrapper.git
+repository: git://github.com/zyga/lava-blackbox.git
 
 For instance, to add it to one of the Linaro builds all I had to do was to
 patch the manifest with the following diff:
@@ -122,7 +122,7 @@ an Android device) to start testing.
 
 *wrapper finders*: Small programs that help *lava-blackbox* to recognize valid
 tests and suggests which *wrappers* should be used to process that test.
-android-lava-wrapper ships with one wrapper finder by default,
+lava-blackbox ships with one wrapper finder by default,
 lava-wrapper-finder-gtest that recognizes certain gtest-based tests. All
 wrapper finders must be placed in /system/bin and must follow the naming
 convention lava-wrapper-finder-\*
@@ -132,7 +132,7 @@ into the *Linaro Dashboard Bundle* format. Each wrapper has a standardized
 interface and must accept -o and -r options as well as a single argument that
 points to the test to execute. The wrapper must execute the test in any means
 necessary and create a bundle with the processed test results.
-android-lava-wrapper ships with lava-gtest-wrapper that knows how to execute
+lava-blackbox ships with lava-gtest-wrapper that knows how to execute
 and parse gtest-based tests.
 
 *Linaro Dashboard Bundle*: A JSON-based data interchange format designed to
