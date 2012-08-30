@@ -24,7 +24,7 @@ patch the manifest with the following diff:
                 fetch="git://git.linaro.org/" />
        <remote  name="android_input_bridge"
                 fetch="git://github.com/rperier/" />
-    +  <remote  name="android-lava-wrapper"
+    +  <remote  name="zyga"
     +           fetch="git://github.com/zyga/" />
        <default revision="refs/tags/android-4.1.1_r4"
                 remote="aosp"
@@ -33,7 +33,7 @@ patch the manifest with the following diff:
        <!-- External extras -->
        <project path="packages/apps/0xbench" name="platform/packages/apps/0xbench" revision="linaro-master" />
        <project path="external/android_input_bridge" name="android_input_bridge" remote="android_input_bridge" revision="master" />
-    +  <project path="external/android-lava-blackbox" name="android-lava-blackbox" remote="android-lava-blackbox" revision="master" />
+    +  <project path="external/lava-blackbox" name="lava-blackbox" remote="zyga" revision="master" />
      
        <!-- Linaro extras -->
        <project path="packages/apps/DisableSuspend" name="platform/packages/apps/DisableSuspend" revision="master" />
@@ -41,9 +41,9 @@ patch the manifest with the following diff:
 
 Having done that run repo sync to fetch the new repository.
 
-It is important to know that android-lava-blackbox runs _only_ in builds made
-with *TARGET_BUILD_VARIANT=tests*. If in doubt have a look at my build scripts
-at http://github.com/zyga/android-build-scripts The configurations ending with
+It is important to know that lava-blackbox runs _only_ in builds made with
+*TARGET_BUILD_VARIANT=tests*. If in doubt have a look at my build scripts at
+http://github.com/zyga/android-build-scripts The configurations ending with
 -tests build the proper variant. 
 
 Once you have a build transfer it onto your device (*make flash* if you have
@@ -62,9 +62,14 @@ How to grab results
 ===================
 
 You can fetch each result with adb pull but ideally you will use
-lava-android-test to run this and obtain a single bundle directly.
+lava-android-test to run this and obtain a single bundle directly. Support for
+doing that has landed in trunk as of revision 205 (it will be released in the
+next few days/weeks but feel free to grab that revision from trunk directly)
 
-This topic shall be extended as lava-android-test parts get written.
+Having the proper code around  use lava-android-test to run the 'blackbox' test
+and save the bundle by passing the -o option. Like this:
+
+    $ lava-android-test run blackbox -o blackbox.json
 
 Which tests are supported
 =========================
