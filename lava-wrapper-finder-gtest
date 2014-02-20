@@ -30,20 +30,23 @@ for supported_test in \
      /data/nativetest/gtest_repeat_test \
      /data/nativetest/gtest_stress_test \
      /data/nativetest/webrtc_apm_unit_test/webrtc_apm_unit_test \
-     /system/bin/BasicHashtable_test \
-     /system/bin/BlobCache_test \
+     /data/nativetest/dalvik-vm-unit-tests/dalvik-vm-unit-tests \
+     /data/nativetest/ion-unit-tests/ion-unit-tests \
+     /data/nativetest/libgui_test/libgui_test \
+     /data/nativetest/BasicHashtable_test/BasicHashtable_test \
+     /data/nativetest/BlobCache_test/BlobCache_test \
      /system/bin/EGL_test \
-     /system/bin/InputChannel_test \
-     /system/bin/InputDispatcher_test \
-     /system/bin/InputEvent_test \
-     /system/bin/InputPublisherAndConsumer_test \
-     /system/bin/InputReader_test \
-     /system/bin/Looper_test \
-     /system/bin/ObbFile_test \
-     /system/bin/String8_test \
-     /system/bin/Unicode_test \
+     /data/nativetest/InputChannel_test/InputChannel_test \
+     /data/nativetest/InputDispatcher_test/InputDispatcher_test \
+     /data/nativetest/InputEvent_test/InputEvent_test \
+     /data/nativetest/InputPublisherAndConsumer_test/InputPublisherAndConsumer_test \
+     /data/nativetest/InputReader_test/InputReader_test \
+     /data/nativetest/Looper_test/Looper_test \
+     /data/nativetest/ObbFile_test/ObbFile_test \
+     /data/nativetest/String8_test/String8_test \
+     /data/nativetest/Unicode_test/Unicode_test \
      /system/bin/Vector_test \
-     /system/bin/ZipFileRO_test \
+     /data/nativetest/ZipFileRO_test/ZipFileRO_test \
      /system/bin/keymaster_test \
      ;
 do

@@ -85,7 +85,7 @@ This tool, runs on an Android device, once triggered it requires no outside
 help to produce test results. It follows this simple algorithm to complete its
 task:
 
- 1. Any file named \*\_test is considered a possible candidate
+ 1. Any file named \*\_test or \*\-tests is considered a possible candidate
  2. Each candidate is offered to a subsequent wrapper-finders. Wrapper finders
     are small programs that are saved to /system/bin and follow a simple naming
     convention lava-wrapper-finder-\*
