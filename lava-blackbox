@@ -92,7 +92,7 @@ if [ "$run_tests" = yes ]; then
     info "Test results will be saved to $test_run_dir"
 
     # Find all executables that look like _test and run them
-    for test_exe in $(find / -type f -name "*_test" 2>/dev/null); do
+    for test_exe in $(find / -type f \( -name "*_test" -o -name "*-tests" \) 2>/dev/null); do
         info "Considering test executable: $test_exe"
         # Find a wrapper for that executable
         wrapper=
